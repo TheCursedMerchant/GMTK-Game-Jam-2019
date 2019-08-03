@@ -92,10 +92,12 @@ func attack(type):
 		'Shoot':
 			current_attack = ranged_scene.instance(0) 
 			loc = ranged_loc 
-	
+			
 	current_attack.direction = facing_direction
 	current_attack.creator = self
-	current_attack.global_position = global_position + loc * facing_direction
+	current_attack.global_position = global_position + Vector2(loc.x * facing_direction.x, loc.y)
+	
+	print(facing_direction)
 	get_tree().get_root().add_child(current_attack)
 	
 	

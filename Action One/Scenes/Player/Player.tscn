@@ -17,17 +17,17 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 2 ) ],
 "loop": false,
-"name": "Fall",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ) ],
-"loop": false,
 "name": "Jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "Fall",
 "speed": 5.0
 } ]
 
@@ -40,7 +40,7 @@ JUMP_GRAVITY = 20
 move_speed = 150
 jump_speed = 250
 drag = 0.5
-melee_loc = Vector2( 10, 0 )
+melee_loc = Vector2( 15, -8 )
 ranged_loc = Vector2( 20, 0 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
