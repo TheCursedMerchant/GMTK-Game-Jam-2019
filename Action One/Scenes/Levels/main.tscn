@@ -1,0 +1,109 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/engine/game.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Game/Player_Spawn.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Geometry/Brick_0.tscn" type="PackedScene" id=3]
+
+[node name="Game" type="Node"]
+script = ExtResource( 1 )
+spawn_point_path = NodePath("Player_Spawn")
+
+[node name="Player_Spawn" parent="." instance=ExtResource( 2 )]
+position = Vector2( 120, 256 )
+
+[node name="Geometry" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Brick_0" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 272, 288 )
+
+[node name="Brick_1" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 288, 288 )
+
+[node name="Brick_2" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 304, 288 )
+
+[node name="Brick_3" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 256, 288 )
+
+[node name="Brick_4" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 240, 288 )
+
+[node name="Brick_5" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 224, 288 )
+
+[node name="Brick_6" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 208, 288 )
+
+[node name="Brick_7" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 192, 288 )
+
+[node name="Brick_8" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 176, 288 )
+
+[node name="Brick_21" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 160, 288 )
+
+[node name="Brick_22" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 144, 288 )
+
+[node name="Brick_23" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 128, 288 )
+
+[node name="Brick_9" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 320, 288 )
+
+[node name="Brick_10" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 336, 288 )
+
+[node name="Brick_11" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 352, 288 )
+
+[node name="Brick_12" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 384, 288 )
+
+[node name="Brick_13" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 368, 288 )
+
+[node name="Brick_14" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 432, 288 )
+
+[node name="Brick_24" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 416, 288 )
+
+[node name="Brick_25" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 400, 288 )
+
+[node name="Brick_15" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 448, 288 )
+
+[node name="Brick_16" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 464, 288 )
+
+[node name="Brick_17" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 480, 288 )
+
+[node name="Brick_18" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 496, 288 )
+
+[node name="Brick_19" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 512, 288 )
+
+[node name="Brick_20" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 528, 288 )
+
+[node name="Brick_26" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 544, 288 )
+
+[node name="Brick_27" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 560, 288 )
+
+[node name="Brick_28" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 112, 288 )
+
+[node name="Brick_29" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 96, 288 )
+
+[node name="Brick_30" parent="Geometry" instance=ExtResource( 3 )]
+position = Vector2( 80, 288 )
+
