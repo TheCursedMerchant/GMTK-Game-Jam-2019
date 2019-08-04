@@ -118,6 +118,7 @@ func refresh():
 
 func die():
 	print('Player Died!')
+	visible = false 
 	var particle = particle_scene.instance(0) 
 	var sound = snd_death_explode_scene.instance(0)
 	sound.global_position = global_position

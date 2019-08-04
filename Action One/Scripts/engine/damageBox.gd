@@ -16,6 +16,12 @@ var creator
 var weakRef = weakref(self)
 var timer = Timer.new() 
 
+func _ready():
+	if direction.x == 1:
+		animation_player.flip_h = false
+	else:
+		animation_player.flip_h = true
+
 func _physics_process(delta):
 	animation_player.play('default')
 	if direction.x == 1:
@@ -28,6 +34,10 @@ func handle_collision(body):
 	if(body != creator):
 		if body.has_method('take_damage'):
 			body.take_damage(damage) 
+			if creator.get('type') == 'Player':
+				creator.refresh()
+				creator.emit_signal('shake')
+			destroy()
 
 func destroy():
 	timer.stop()

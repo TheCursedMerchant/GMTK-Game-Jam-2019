@@ -26,6 +26,7 @@ func spawn_player():
 		player.global_position = spawn_point.global_position 
 		player.connect('act', self, '_on_act')
 		player.connect('player_died', self, '_on_player_dead') 
+		player.connect('shake', self, '_on_shake')
 		add_child(player)
 	else: 
 		print('No Spawn Point found!')
@@ -54,6 +55,10 @@ func _on_player_dead():
 	camera.follow = false 
 	camera.shake(0.5, 30, 8)
 	timer.start()
+
+func _on_shake():
+	print('Shake!')
+	camera.shake(0.5, 15, 8)
 
 func on_timeout_complete():
 	reset()

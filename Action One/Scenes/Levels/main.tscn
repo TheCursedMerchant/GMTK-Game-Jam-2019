@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/engine/game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Game/Player_Spawn.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Audio/Music/main_theme.wav" type="AudioStream" id=5]
 [ext_resource path="res://Scenes/Game/DeathBox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Geometry/MoveBlock.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Enemies/Floater.tscn" type="PackedScene" id=8]
 
 [node name="Game" type="Node"]
 script = ExtResource( 1 )
@@ -78,4 +79,7 @@ position = Vector2( 312, 368 )
 position = Vector2( 328, 288 )
 travel_speed = 20
 travel_direction = Vector2( 1, 0 )
+
+[node name="Floater" parent="." instance=ExtResource( 8 )]
+position = Vector2( 88, 264 )
 
