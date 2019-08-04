@@ -11,6 +11,7 @@ export var JUMP_GRAVITY = 10
 export var move_speed = 1
 export var jump_speed = 1
 export var drag = 1.00
+export var type = 'DEFAULT'
 
 # Entity state 
 var velocity = Vector2()

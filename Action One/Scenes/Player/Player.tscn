@@ -1,31 +1,37 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/entities/player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Art/test/test_player.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/engine/fsm_manager.gd" type="Script" id=3]
-[ext_resource path="res://Scripts/entities/player/States/player_Idle.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/Player/player_Move.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/Player/player_Jump.gd" type="Script" id=6]
-[ext_resource path="res://Scripts/entities/player/States/player_Fall.gd" type="Script" id=7]
+[ext_resource path="res://Art/characters/Player/player4.png" type="Texture" id=2]
+[ext_resource path="res://Art/characters/Player/player5.png" type="Texture" id=3]
+[ext_resource path="res://Art/characters/Player/player6.png" type="Texture" id=4]
+[ext_resource path="res://Art/characters/Player/player1.png" type="Texture" id=5]
+[ext_resource path="res://Art/characters/Player/player2.png" type="Texture" id=6]
+[ext_resource path="res://Art/characters/Player/player3.png" type="Texture" id=7]
+[ext_resource path="res://Art/characters/Player/player7.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/engine/fsm_manager.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/entities/player/States/player_Idle.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/entities/player/States/player_Move.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/entities/player/States/player_Jump.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/entities/player/States/player_Fall.gd" type="Script" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Move",
-"speed": 5.0
+"speed": 10.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": false,
 "name": "Jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": false,
 "name": "Fall",
 "speed": 5.0
@@ -38,8 +44,9 @@ extents = Vector2( 8.05877, 8.019 )
 script = ExtResource( 1 )
 JUMP_GRAVITY = 20
 move_speed = 150
-jump_speed = 250
+jump_speed = 300
 drag = 0.5
+type = "Player"
 melee_loc = Vector2( 15, -8 )
 ranged_loc = Vector2( 20, 0 )
 
@@ -52,22 +59,22 @@ visible = false
 shape = SubResource( 2 )
 
 [node name="State_Manager" type="Node" parent="."]
-script = ExtResource( 3 )
+script = ExtResource( 9 )
 state_paths = [ NodePath("Idle"), NodePath("Move"), NodePath("Jump"), NodePath("Fall") ]
 
 [node name="Idle" type="Node" parent="State_Manager"]
-script = ExtResource( 4 )
+script = ExtResource( 10 )
 saved = true
 
 [node name="Move" type="Node" parent="State_Manager"]
-script = ExtResource( 5 )
+script = ExtResource( 11 )
 saved = true
 
 [node name="Jump" type="Node" parent="State_Manager"]
-script = ExtResource( 6 )
+script = ExtResource( 12 )
 saved = true
 
 [node name="Fall" type="Node" parent="State_Manager"]
-script = ExtResource( 7 )
+script = ExtResource( 13 )
 saved = true
 

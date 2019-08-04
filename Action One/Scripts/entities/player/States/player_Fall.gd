@@ -11,5 +11,9 @@ func update(delta):
 	# Move while falling 
 	target.check_move()
 	
+	# Check for mid air jumps 
+	target.check_jump()
+	
 	if target.current_grounded:
 		manager.set_state('Idle')
+		

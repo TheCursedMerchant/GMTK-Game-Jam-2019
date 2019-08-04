@@ -1,11 +1,13 @@
 extends Area2D
  
 # Controlled State 
-
 export var move_speed = 0 
 export var damage = 1
 export var direction = Vector2(1, 0)
 export var lifeTime = .5 
+export var type = 'DEFAULT'
+
+var snd_bullet_explosion_scene = preload('res://Scenes/Audio/SFX/snd_BulletExplode.tscn')
 
 onready var animation_player = $AnimatedSprite
 
@@ -14,17 +16,6 @@ var creator
 var weakRef = weakref(self)
 var timer = Timer.new() 
 
-#func _ready(): 
-#	timer = Timer.new()
-#	timer.set_one_shot(true)
-#	timer.set_wait_time(lifeTime)
-#	timer.connect("timeout", self, "on_timeout_complete")
-#	add_child(timer)
-#	timer.start() 
-#
-#func on_timeout_complete():
-#	destroy()
-	
 func _physics_process(delta):
 	animation_player.play('default')
 	if direction.x == 1:
@@ -40,6 +31,9 @@ func handle_collision(body):
 
 func destroy():
 	timer.stop()
+	var sound = snd_bullet_explosion_scene.instance(0)
+	sound.global_position = global_position
+	get_tree().get_root().add_child(sound)
 	if weakRef.get_ref() != null :
 		queue_free() 
  
@@ -51,3 +45,8 @@ func _on_Shoot_body_entered(body):
 
 func _on_AnimatedSprite_animation_finished():
 	destroy()
+	
+func _on_Melee_Attack_area_entered(area):
+	if creator.get('type') == creator and area.get('type') == 'bullet' :
+		creator.refresh() 
+	queue_free()

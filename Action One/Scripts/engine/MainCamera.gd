@@ -12,9 +12,10 @@ var _last_shook_timer = 0
 var _previous_x = 0.0
 var _previous_y = 0.0
 var _last_offset = Vector2(0, 0) 
+var follow = true 
 
 func _physics_process(delta):
-	if player != null :
+	if player != null and follow:
 		global_position.x += (player.global_position.x - global_position.x) * follow_percent
 		global_position.y += (player.global_position.y - global_position.y) * follow_percent
 		

@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/engine/game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Game/Player_Spawn.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Geometry/Brick_0.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Items/SkillPellet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Audio/Music/main_theme.wav" type="AudioStream" id=5]
+[ext_resource path="res://Scenes/Game/DeathBox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Geometry/MoveBlock.tscn" type="PackedScene" id=7]
 
 [node name="Game" type="Node"]
 script = ExtResource( 1 )
@@ -14,33 +18,6 @@ position = Vector2( 120, 256 )
 [node name="Geometry" type="Node" parent="."]
 editor/display_folded = true
 
-[node name="Brick_0" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 272, 288 )
-
-[node name="Brick_1" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 288, 288 )
-
-[node name="Brick_2" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 304, 288 )
-
-[node name="Brick_3" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 256, 288 )
-
-[node name="Brick_4" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 240, 288 )
-
-[node name="Brick_5" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 224, 288 )
-
-[node name="Brick_6" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 208, 288 )
-
-[node name="Brick_7" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 192, 288 )
-
-[node name="Brick_8" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 176, 288 )
-
 [node name="Brick_21" parent="Geometry" instance=ExtResource( 3 )]
 position = Vector2( 160, 288 )
 
@@ -49,33 +26,6 @@ position = Vector2( 144, 288 )
 
 [node name="Brick_23" parent="Geometry" instance=ExtResource( 3 )]
 position = Vector2( 128, 288 )
-
-[node name="Brick_9" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 320, 288 )
-
-[node name="Brick_10" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 336, 288 )
-
-[node name="Brick_11" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 352, 288 )
-
-[node name="Brick_12" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 384, 288 )
-
-[node name="Brick_13" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 368, 288 )
-
-[node name="Brick_14" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 432, 288 )
-
-[node name="Brick_24" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 416, 288 )
-
-[node name="Brick_25" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 400, 288 )
-
-[node name="Brick_15" parent="Geometry" instance=ExtResource( 3 )]
-position = Vector2( 448, 288 )
 
 [node name="Brick_16" parent="Geometry" instance=ExtResource( 3 )]
 position = Vector2( 464, 288 )
@@ -106,4 +56,26 @@ position = Vector2( 96, 288 )
 
 [node name="Brick_30" parent="Geometry" instance=ExtResource( 3 )]
 position = Vector2( 80, 288 )
+
+[node name="SkillPellet" parent="." instance=ExtResource( 4 )]
+position = Vector2( 160, 240 )
+
+[node name="SkillPellet3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 316, 240 )
+
+[node name="SkillPellet5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 464, 240 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0
+autoplay = true
+
+[node name="DeathBox" parent="." instance=ExtResource( 6 )]
+position = Vector2( 312, 368 )
+
+[node name="MoveBlock" parent="." instance=ExtResource( 7 )]
+position = Vector2( 328, 288 )
+travel_speed = 20
+travel_direction = Vector2( 1, 0 )
 

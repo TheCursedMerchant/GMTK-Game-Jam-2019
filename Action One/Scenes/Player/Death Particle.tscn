@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="Death Particle" type="CPUParticles2D"]
+amount = 20
+lifetime = 0.32
+speed_scale = 3.0
+explosiveness = 0.46
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 2.95
+

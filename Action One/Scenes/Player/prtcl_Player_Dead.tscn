@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="Player_Dead" type="CPUParticles2D"]
+amount = 20
+speed_scale = 2.5
+explosiveness = 0.5
+emission_shape = 1
+emission_sphere_radius = 7.88
+spread = 66.29
+gravity = Vector2( 0, -98.8 )
+scale_amount_random = 0.15
+
